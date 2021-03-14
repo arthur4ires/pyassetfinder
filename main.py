@@ -1,5 +1,7 @@
 import fontes.hackertarget
+import fontes.ctrsh
 
 if __name__ == "__main__":
 	
-	fontes.hackertarget.returnDomains('www.httpbin.org')
+	print(fontes.hackertarget.returnDomains('httpbin.org'))
+	print(fontes.ctrsh.returnDomains('httpbin.org'))

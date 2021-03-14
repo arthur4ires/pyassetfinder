@@ -10,7 +10,14 @@ class Navegador:
 
 	def downloadResponse(self, url, typeResponse, method):
 
-		if typeResponse == 'json':
-			return self.sessionRequest.get(url).json
-		else:
+		if typeResponse == 'JSON':
+
+			return self.sessionRequest.get(url).json()
+
+		elif typeResponse == 'HTML':
+
 			return self.sessionRequest.get(url).text
+
+		else:
+
+			return self.sessionRequest.get(url)
