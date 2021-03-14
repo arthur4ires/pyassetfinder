@@ -1,4 +1,5 @@
 import fontes.hackertarget
 
 if __name__ == "__main__":
-	print("Hello")
+	
+	fontes.hackertarget.returnDomains('www.httpbin.org')

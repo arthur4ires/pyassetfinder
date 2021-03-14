@@ -13,4 +13,4 @@ class Navegador:
 		if typeResponse == 'json':
 			return self.sessionRequest.get(url).json
 		else:
-			return self.sessionRequest.get(url)
+			return self.sessionRequest.get(url).text
