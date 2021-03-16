@@ -31,3 +31,15 @@ class Navegador:
     r'\[?[A-F0-9]*:[A-F0-9:]+\]?)' # ...or ipv6
     r'(?::\d+)?' # optional port
     r'(?:/?|[/?]\S+)$', re.IGNORECASE)
+
+	def filterUrl(self, url):
+
+		urlClean = url
+		
+		if "*." in url:
+			urlClean = url.replace('*.','')
+		
+		if '\\n' in url:
+			urlClean = url.replace('\\n','')
+
+		return urlClean

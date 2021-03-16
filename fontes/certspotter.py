@@ -1,6 +1,6 @@
 import navegador
 
-URL_API = 'https://crt.sh/?q={}&output=json'
+URL_API = 'https://api.certspotter.com/v1/issuances?domain={}&expand=dns_names&expand=issuer'
 DOMAINS_LIST = []
 
 def returnDomains(domainName):
@@ -10,7 +10,8 @@ def returnDomains(domainName):
 	jsonResponse = browserRequest.downloadResponse(URL_API.format(domainName),'JSON','GET')
 
 	for _ in jsonResponse:
-			
-		DOMAINS_LIST.append(browserRequest.filterUrl(_['common_name']))
+
+		for __ in _['dns_names']:
+			DOMAINS_LIST.append(browserRequest.filterUrl(__))
 
 	return DOMAINS_LIST
