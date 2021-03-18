@@ -35,7 +35,7 @@ class Navegador:
 	def filterUrl(self, url):
 
 		urlClean = url
-		
+
 		if "*." in url:
 			urlClean = url.replace('*.','')
 		

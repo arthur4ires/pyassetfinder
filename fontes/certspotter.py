@@ -8,6 +8,9 @@ def returnDomains(domainName):
 	browserRequest = navegador.Navegador()
 	
 	jsonResponse = browserRequest.downloadResponse(URL_API.format(domainName),'JSON','GET')
+	
+	if jsonResponse['code'] == "not_allowed_by_plan":
+		return []
 
 	for _ in jsonResponse:
 

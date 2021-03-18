@@ -8,6 +8,9 @@ def returnDomains(domainName):
 	browserRequest = navegador.Navegador()
 	
 	jsonResponse = browserRequest.downloadResponse(URL_API.format(domainName),'JSON','GET')
+	
+	if jsonResponse['FDNS_A'] == NoneType:
+		return []
 
 	for _ in jsonResponse['FDNS_A']:
 

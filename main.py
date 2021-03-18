@@ -19,7 +19,7 @@ def addListToGlobal(listOld):
 
 def printDomainList(domainList):
 
-	print("\n".join(domainList))
+	#print("\n".join(domainList))
 
 	addListToGlobal(domainList)
 
@@ -35,6 +35,7 @@ if __name__ == "__main__":
 		printDomainList(fontes.bufferoverun.returnDomains(domainName))
 		printDomainList(fontes.threatcrowd.returnDomains(domainName))
 
-		#print(domainList) -> sem elementos repetidos
+		print("\n".join(domainList))
+
 	else:
 		print("[+] Você deve setar o domínio!")
