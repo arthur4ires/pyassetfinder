@@ -46,7 +46,9 @@ if __name__ == "__main__":
 		printDomainList(fontes.bufferoverun.returnDomains(domainName))
 		printDomainList(fontes.threatcrowd.returnDomains(domainName))
 
-		print("\n".join(domainList))
-
+		#print("\n".join(domainList))
+		
+		for domainAndIp in domainList:
+			print(domainAndIp,getIpFromHostName(domainAndIp))
 	else:
 		print("[+] Você deve setar o domínio!")
