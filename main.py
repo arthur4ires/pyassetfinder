@@ -4,8 +4,16 @@ import fontes.certspotter
 import fontes.bufferoverun
 import fontes.threatcrowd
 import sys
+import socket
+import argparse
 
 domainList = []
+
+def getIpFromHostName(domain):
+	try:
+		return socket.gethostbyname(domain)
+	except:
+		return "0.0.0.0"
 
 def addListToGlobal(listOld):
 
@@ -22,6 +30,9 @@ def printDomainList(domainList):
 	#print("\n".join(domainList))
 
 	addListToGlobal(domainList)
+
+def argParserCommands():
+	print("test")
 
 if __name__ == "__main__":
 	

@@ -9,7 +9,7 @@ def returnDomains(domainName):
 	
 	jsonResponse = browserRequest.downloadResponse(URL_API.format(domainName),'JSON','GET')
 	
-	if jsonResponse['code'] == "not_allowed_by_plan":
+	if 'code' in jsonResponse:
 		return []
 
 	for _ in jsonResponse:
