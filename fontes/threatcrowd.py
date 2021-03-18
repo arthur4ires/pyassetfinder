@@ -8,6 +8,9 @@ def returnDomains(domainName):
 	browserRequest = navegador.Navegador()
 	
 	jsonResponse = browserRequest.downloadResponse(URL_API.format(domainName),'JSON','GET')
+	
+	if "response_code" in jsonResponse:
+		return []
 
 	for _ in jsonResponse['subdomains']:
 
