@@ -9,7 +9,7 @@ def returnDomains(domainName):
 	
 	jsonResponse = browserRequest.downloadResponse(URL_API.format(domainName),'JSON','GET')
 	
-	if jsonResponse['FDNS_A'] == NoneType:
+	if jsonResponse['FDNS_A'] == None:
 		return []
 
 	for _ in jsonResponse['FDNS_A']:
