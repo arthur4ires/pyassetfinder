@@ -3,6 +3,7 @@ import fontes.ctrsh
 import fontes.certspotter
 import fontes.bufferoverun
 import fontes.threatcrowd
+import fontes.subdomainfinder
 import sys
 import socket
 import argparse
@@ -49,6 +50,9 @@ if __name__ == "__main__":
 		#print("\n".join(domainList))
 		
 		for domainAndIp in domainList:
-			print(domainAndIp,getIpFromHostName(domainAndIp))
+
+			ipDomain =  getIpFromHostName(domainAndIp)
+
+			print(domainAndIp,ipDomain)
 	else:
 		print("[+] Você deve setar o domínio!")
