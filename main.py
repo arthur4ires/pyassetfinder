@@ -42,7 +42,7 @@ if __name__ == "__main__":
 
 		domainName = sys.argv[1]
 
-		if sys.argvs[2] != "dev":
+		if sys.argv[2] != "dev":
 			printDomainList(fontes.hackertarget.returnDomains(domainName))
 			printDomainList(fontes.ctrsh.returnDomains(domainName))
 			printDomainList(fontes.certspotter.returnDomains(domainName))

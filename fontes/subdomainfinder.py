@@ -23,6 +23,12 @@ def returnDomains(domainName):
 	for a in resultasdosCSRF:
 		POST_DATA[a[1]] = a[2]
 
+	POST_DATA['domain'] = domainName
+
+	#downloadDataFrom = https://subdomainfinder.c99.nl/9617712552/8242470323/1.1.1.1
+
+	#getNewCsrfToken
+	
 	print(POST_DATA)
 	"""
 	if "response_code" in jsonResponse:
