@@ -4,6 +4,7 @@ import fontes.certspotter
 import fontes.bufferoverun
 import fontes.threatcrowd
 import fontes.subdomainfinder
+
 import sys
 import socket
 import argparse
@@ -41,11 +42,13 @@ if __name__ == "__main__":
 
 		domainName = sys.argv[1]
 
-		printDomainList(fontes.hackertarget.returnDomains(domainName))
-		printDomainList(fontes.ctrsh.returnDomains(domainName))
-		printDomainList(fontes.certspotter.returnDomains(domainName))
-		printDomainList(fontes.bufferoverun.returnDomains(domainName))
-		printDomainList(fontes.threatcrowd.returnDomains(domainName))
+		#printDomainList(fontes.hackertarget.returnDomains(domainName))
+		#printDomainList(fontes.ctrsh.returnDomains(domainName))
+		#printDomainList(fontes.certspotter.returnDomains(domainName))
+		#printDomainList(fontes.bufferoverun.returnDomains(domainName))
+		#printDomainList(fontes.threatcrowd.returnDomains(domainName))
+
+		fontes.subdomainfinder.returnDomains(domainName)
 
 		#print("\n".join(domainList))
 		
