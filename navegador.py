@@ -12,7 +12,10 @@ class Navegador:
 
 		if typeResponse == 'JSON':
 
-			return self.sessionRequest.get(url).json()
+			try:
+				return self.sessionRequest.get(url).json()
+			except:
+				return self.sessionRequest.get(url)
 
 		elif typeResponse == 'HTML':
 

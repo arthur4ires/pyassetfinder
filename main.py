@@ -57,6 +57,12 @@ if __name__ == "__main__":
 
 			ipDomain =  getIpFromHostName(domainAndIp)
 
-			print(domainAndIp,ipDomain)
+			try:
+				ipBlocked = sys.argv[3]
+
+				if ipBlocked != ipDomain:
+					print(domainAndIp, ipDomain)
+			except:
+				print(domainAndIp,ipDomain)
 	else:
 		print("[+] Você deve setar o domínio!")
