@@ -23,7 +23,7 @@ class Navegador:
 
 		else:
 
-			return self.sessionRequest.get(url)
+			return self.sessionRequest.get(url, timeout=3) #status_code
 	
 	def urlValidator(self, url):
 		regex = re.compile(
