@@ -34,24 +34,29 @@ def printDomainList(domainList):
 	addListToGlobal(domainList)
 
 def argParserCommands():
-	print("test")
+
+	parser = argparse.ArgumentParser()
+	parser.add_argument('-u','--url', dest="domainName", help='Você deve setar o domínio a ser pesquisado!', required=True)
+	parser.add_argument('--dev-mode', dest="debugName", help='APIs em desenvolvimento!', default=False)
+
+	return parser.parse_args()
 
 if __name__ == "__main__":
 	
-	if sys.argv[1] != "":
+	returnComands = argParserCommands()
 
-		domainName = sys.argv[1]
+	if returnComands.domainName != "":
 
-		if sys.argv[2] != "dev":
-			printDomainList(fontes.hackertarget.returnDomains(domainName))
-			printDomainList(fontes.ctrsh.returnDomains(domainName))
-			printDomainList(fontes.certspotter.returnDomains(domainName))
-			printDomainList(fontes.bufferoverun.returnDomains(domainName))
-			printDomainList(fontes.threatcrowd.returnDomains(domainName))
+		if returnComands.debugName == False:
+
+			printDomainList(fontes.hackertarget.returnDomains(returnComands.domainName))
+			printDomainList(fontes.ctrsh.returnDomains(returnComands.domainName))
+			printDomainList(fontes.certspotter.returnDomains(returnComands.domainName))
+			printDomainList(fontes.bufferoverun.returnDomains(returnComands.domainName))
+			printDomainList(fontes.threatcrowd.returnDomains(returnComands.domainName))
+
 		else:
-			fontes.subdomainfinder.returnDomains(domainName)
-
-		#print("\n".join(domainList))
+			fontes.subdomainfinder.returnDomains(returnComands.domainName)
 		
 		for domainAndIp in domainList:
 
@@ -62,7 +67,10 @@ if __name__ == "__main__":
 
 				if ipBlocked != ipDomain:
 					print(domainAndIp, ipDomain)
+
 			except:
 				print(domainAndIp,ipDomain)
+
 	else:
+
 		print("[+] Você deve setar o domínio!")
