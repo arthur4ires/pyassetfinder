@@ -71,9 +71,11 @@ if __name__ == "__main__":
 		domainReturn = domainAndIp
 
 		if returnComands.statusCode != False:
-
-			statusCode = navegador.Navegador().downloadResponse('http://{}'.format(domainAndIp),'STATUS','GET').status_code
-
+			try:
+				statusCode = navegador.Navegador().downloadResponse('http://{}'.format(domainAndIp),'STATUS','GET').status_code
+			except:
+				statusCode = 'TIMEOUT'
+			
 			domainReturn += ' - ({})'.format(statusCode)
 		
 		domainReturn += ' {}'.format(ipDomain)
