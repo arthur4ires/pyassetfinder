@@ -7,8 +7,13 @@ class Navegador:
 		self.url = ''
 		self.typeResponse = ''
 		self.sessionRequest = requests.Session()
+		self.headerNavegador = {'accept-language': 'en-GB,en;q=0.9,pt-BR;q=0.8,pt;q=0.7,en-US;q=0.6',
+		             			'cache-control': 'no-cache',
+		             			'user-agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Safari/537.36)'}
 
 	def downloadResponse(self, url, typeResponse, method):
+
+		self.sessionRequest.headers.update(self.headerNavegador)
 
 		if typeResponse == 'JSON':
 
