@@ -44,6 +44,9 @@ class Navegador:
 
 		urlClean = url
 
+		if url == None:
+			return url
+
 		if "*." in url:
 			urlClean = url.replace('*.','')
 		
