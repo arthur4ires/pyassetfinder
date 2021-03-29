@@ -39,7 +39,7 @@ def argParserCommands():
 	parser = argparse.ArgumentParser()
 	parser.add_argument('-u','--url', dest="domainName", help='Você deve setar o domínio a ser pesquisado!', required=True)
 	parser.add_argument('--status-code', dest="statusCode", help='Verifica se exister um servidor web e se ele está respondendo!', default=False, action="store_true")
-	parser.add_argument('--ip-block', dest="ipBlock", help='Não exibe domínios com um IP específico!', default=False, action="store_true")
+	parser.add_argument('--ip-block', dest="ipBlock", help='Não exibe domínios com um IP específico!', default=False)
 	parser.add_argument('--dev-mode', dest="debugName", help='APIs em desenvolvimento!', default=False, action="store_true")
 
 	return parser.parse_args()
