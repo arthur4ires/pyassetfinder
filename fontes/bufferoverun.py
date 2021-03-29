@@ -1,6 +1,6 @@
 import navegador
 
-URL_API = 'https://dns.bufferover.run/dns?q={}'
+URL_API = 'https://dns.bufferover.run/dns?q=.{}'
 DOMAINS_LIST = []
 
 def returnDomains(domainName):
