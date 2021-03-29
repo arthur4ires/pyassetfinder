@@ -76,7 +76,8 @@ if __name__ == "__main__":
 			except:
 				statusCode = 'TIMEOUT'
 			
-			domainReturn += ' - ({})'.format(statusCode)
+			if statusCode != None:
+				domainReturn += ' - ({})'.format(statusCode)
 		
 		domainReturn += ' {}'.format(ipDomain)
 
